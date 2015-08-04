@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 use PDO;
 use UnexpectedValueException;
 use App\Models\Exceptions\ModelNotFoundException;

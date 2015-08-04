@@ -10,7 +10,7 @@ class Movie
     private static getDatabaseConnection()
     {
         if (! static::db) {
-            $dsn = 'mysql:host=localhost;dbname=schlocktoberfest;charset=utf8';
+            $dsn = 'mysql:host=localhost;dbname=annablog;charset=utf8';
 
             static::db = new PDO($dsn, 'root', '');
 

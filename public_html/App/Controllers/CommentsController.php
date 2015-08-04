@@ -4,22 +4,21 @@ namespace App\Controllers;
 
 use App\Models\Comment;
 
-class CommentsController extends Controller
-{
-    public function create()
-    {
-        $input = $_POST;
-        $input['userID'] = static::$auth->user()->id;
 
-        $newcomment = new Comment($input);
+class CommentsController extends Controller {
+	public function create() {
+		$input           = $_POST;
+		$input['userID'] = static ::$auth->user()->id;
 
-        if (! $newcomment->isValid()) {
-            $_SESSION['comment.form'] = $newcomment;
-            header("Location: ./?page=movie&id=" . $newcomment->movieID);
-            exit();
-        }
+		$newcomment = new Comment($input);
 
-        $newcomment->save();
-        header("Location: ./?page=movie&id=" . $newcomment->movieID . "#comment-" . $newcomment->id);
-    }
+		if (!$newcomment->isValid()) {
+			$_SESSION['comment.form'] = $newcomment;
+			header("Location: ./?page=blog.post&id=".$newcomment->movieID."#comment");
+			exit();
+		}
+
+		$newcomment->save();
+		header("Location: ./?page=blog.post&id=".$newcomment->movieID."#comment-".$newcomment->id);
+	}
 }

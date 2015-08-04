@@ -9,7 +9,7 @@ class RecipeController extends Controller {
 	public function show() {
 		$recipe = Recipe::all();
 
-		$view = new RecipeView(['recipe' => $recipe]);
+		$view = new RecipeView(['recipes' => $recipe]);
 		$view->render();
 	}
 }

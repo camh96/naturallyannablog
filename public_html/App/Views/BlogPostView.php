@@ -2,7 +2,7 @@
 
 namespace App\Views;
 
-class MovieFormView extends View
+class BlogPostView extends View
 {
     public function render()
     {
@@ -15,7 +15,7 @@ class MovieFormView extends View
     protected function content()
     {
         extract($this->data);
-        include "templates/movieform.inc.php";
+        include "templates/blogpost.inc.php";
     }
 }
 

@@ -2,21 +2,21 @@
        <div class="col-xs-12">
          <ol class="breadcrumb">
          <li><a href="./">Home</a></li>
-         <li><a href="./?page=movies">Movies</a></li>
+         <li><a href="./?page=blog">Posts</a></li>
          <li class="active"><?=$movie->title?></li>
        </ol>
-         <h1 style="text-align:center">Movie</h1>
+         <h1 style="text-align:center">Post</h1>
 
 
            <h2> <?=$movie->title;?></h2>
-           <p>This movie was released in <?php echo $movie->year;?></p>
-           <p style="padding:5px;"> <?echo $movie->description;
+           <p>This was posted on <?php echo date('l, F j Y, H:i', strtotime($movie->created));?></p>
+           <p style="padding:5px;"> <?echo $movie->message;
 ?></p>
 
 <?php if (static ::$auth->isAdmin()):?>
             <p>
-            <a href="./?page=movie.edit&amp;id=<?=$movie->id?>" class="btn btn-default">
-              <span class="glyphicon glyphicon-pencil"></span> Edit Movie
+            <a href="./?page=post.edit&amp;id=<?=$movie->id?>" class="btn btn-default">
+              <span class="glyphicon glyphicon-pencil"></span> Edit Post
             </a>
           </p>
 <?php endif?>

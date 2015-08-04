@@ -1,6 +1,6 @@
 <?php
 
-require "../schlocktoberfest-config.inc.php";
+require "../annablog-config.inc.php";
 
 require "vendor/autoload.php";
 

@@ -4,8 +4,8 @@ namespace App\Models;
 
 class Recipe extends DatabaseModel {
 
-	protected static $columns = ['id', 'name', 'stock', 'description', 'price', 'image'];
+	protected static $columns = ['id', 'title', 'ingredients', 'process', 'img'];
 
-	protected static $tableName = "merchandise";
+	protected static $tableName = "recipes";
 
 }

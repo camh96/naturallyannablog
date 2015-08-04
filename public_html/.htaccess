@@ -1,2 +1,0 @@
-RewriteEngine on
-rewriterule ^xampp/annablog/public_html/?page=about(.*)$ http://127.0.0.1/xampp/annablog/about$1 [r=301,nc]

@@ -35,7 +35,7 @@ class User extends DatabaseModel {
 	 * @return String containing either just a URL or a complete image tag
 	 * @source http://gravatar.com/site/implement/images/php/
 	 */
-	public function gravatar($s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array()) {
+	public function gravatar($s = 80, $d = 'retro', $r = 'g', $img = false, $atts = array()) {
 		$url = 'http://www.gravatar.com/avatar/';
 		$url .= md5(strtolower(trim($this->email)));
 		$url .= "?s=$s&d=$d&r=$r";

@@ -2,13 +2,13 @@
 
 use App\Controllers\AboutController;
 use App\Controllers\AuthenticationController;
+use App\Controllers\BlogController;
+use App\Controllers\RecipeController;
 use App\Controllers\CommentsController;
 use App\Controllers\ErrorController;
 use App\Controllers\FAQsController;
 use App\Controllers\HomeController;
-use App\Controllers\MoviesController;
 use App\Controllers\MovieSuggestController;
-use App\Controllers\RecipeController;
 use App\Models\Exceptions\ModelNotFoundException;
 use App\Services\Exceptions\InsufficientPrivilegesException;
 
@@ -89,49 +89,49 @@ try {
 
 		case "blog":
 
-			$controller = new MoviesController();
+			$controller = new BlogController();
 			$controller->index();
 
 			break;
 
-		case "movie":
+		case "blog.post": //old "movie"
 
-			$controller = new MoviesController();
+			$controller = new BlogController();
 			$controller->show();
 
 			break;
 
-		case "movie.create":
+		case "post.create":
 
-			$controller = new MoviesController();
+			$controller = new BlogController();
 			$controller->create();
 
 			break;
 
-		case "movie.store":
+		case "post.store":
 
-			$controller = new MoviesController();
+			$controller = new BlogController();
 			$controller->store();
 
 			break;
 
-		case "movie.edit":
+		case "post.edit":
 
-			$controller = new MoviesController();
+			$controller = new BlogController();
 			$controller->edit();
 
 			break;
 
 		case "movie.update":
 
-			$controller = new MoviesController();
+			$controller = new BlogController();
 			$controller->update();
 
 			break;
 
 		case "movie.destroy":
 
-			$controller = new MoviesController();
+			$controller = new BlogController();
 			$controller->destroy();
 
 			break;

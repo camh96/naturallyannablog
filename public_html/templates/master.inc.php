@@ -27,7 +27,7 @@
                   <li <?php if ($page === "about"):?> class="active" <?php endif;?> ><a href="./?page=about">About</a></li>
                   <li <?php if ($page === "recipes"):?> class="active" <?php endif;?> ><a href="./?page=recipes">Recipes</a></li>
                   <li <?php if ($page === "blog"):?> class="active" <?php endif;?> ><a href="./?page=blog">Blog</a></li>
-                  <li <?php if ($page === "contact"):?> class="active" <?php endif;?>><a href="./?page=contact">Contact</a></li>
+                  <li <?php if ($page === "contact"):?> class="active" <?php endif;?> ><a href="./?page=contact">Contact</a></li>
                   <li <?php if ($page === "faqs"):?> class="active" <?php endif;?>><a href="./?page=faqs">FAQs</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">

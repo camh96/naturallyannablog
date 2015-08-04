@@ -16,6 +16,8 @@ $errors = $user->errors;
               </div>
             </div>
 
+          
+
             <div class="form-group form-group-lg<?php if ($errors['password']):?> has-error <?php endif;?>">
               <label for="password" class="col-sm-4 col-md-2 control-label">Password</label>
               <div class="col-sm-8 col-md-10">
@@ -41,6 +43,10 @@ $errors = $user->errors;
               </div>
             </div>
           </form>
+
+
+
+
 
         </div>
       </div>
