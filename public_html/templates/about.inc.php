@@ -5,10 +5,10 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-6 hidden-xs">
+        <div class="col-sm-3">
           <img class="img-responsive" src="http://nebula.wsimg.com/e8142046be7ee7f6298f226b34fe78a0?AccessKeyId=0A1C4744687DD535B06D&disposition=0&alloworigin=1" alt="">
         </div>
-        <div class="col-md-6 pull-right">
+        <div class="col-md-6 ">
           <p class="lead">Hello, friends.</p>
 
       <p>I’m Annalise. 20 & passionate.</p>

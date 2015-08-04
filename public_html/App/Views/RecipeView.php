@@ -2,17 +2,17 @@
 
 namespace App\Views;
 
-class MoviesView extends View {
+class RecipeView extends View {
 	public function render() {
 
-		$page       = "blog";
-		$page_title = "Blog";
+		$page       = "recipes";
+		$page_title = "Recipes";
 		include "templates/master.inc.php";
 	}
 
 	protected function content() {
 		extract($this->data);
-		include "templates/movies.inc.php";
+		include "templates/recipe.inc.php";
 	}
 
 }

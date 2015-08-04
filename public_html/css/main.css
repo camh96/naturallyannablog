@@ -4,6 +4,19 @@
   z-index: 2000;
 }
 
+body{
+  min-height: 100%;
+}
+
+/*body{
+  position: relative;
+}*/
+.footer-thing
+{
+    position: absolute;
+    bottom: 1%;   
+}
+
 body > .container
 {
   padding-top: 60px;

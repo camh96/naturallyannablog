@@ -46,8 +46,8 @@
 
 <?php $this->content();?>
       <footer class="footer">
-      <div class="container">
-        <p class="text-muted">© <?php echo date("Y")?> Naturally Anna. Website Developed By <a href="http://github.com/camh96">Cam Hovell.</a></p>
+      <div class="container" id="wrap">
+        <p class="text-muted">© <?php echo date("Y")?> Naturally Anna.</p>
       </div>
     </footer>
       </div>

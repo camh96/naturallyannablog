@@ -11,7 +11,7 @@
 <?php endif?>
 <ol>
 <?php foreach ($movies as $movie):?>
-                <li><a href="./?page=movie&amp;id=<?=$movie->id?>">
+                <li><a href="./?page=recipes&amp;id=<?=$movie->id?>">
 <?=$movie->title;
 ?> (<?=$movie->year;?>)
                 </a></li>

@@ -10,8 +10,8 @@
 
 
                  </div>
-        <div class="col-sm-6 clearfix">
-          <img class="img-responsive" src="http://features.peta.org/how-to-go-vegan/images/asian-420x258.jpg" alt="">
+        <div class="col-sm-4 clearfix">
+          <img class="img-responsive" src="http://nebula.wsimg.com/1ec2714c8cf11542677ee5538d6a9fb2?AccessKeyId=0A1C4744687DD535B06D&disposition=0&alloworigin=1" alt="">
         </div>
       </div>
 

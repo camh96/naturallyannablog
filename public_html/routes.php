@@ -6,9 +6,9 @@ use App\Controllers\CommentsController;
 use App\Controllers\ErrorController;
 use App\Controllers\FAQsController;
 use App\Controllers\HomeController;
-use App\Controllers\MerchController;
 use App\Controllers\MoviesController;
 use App\Controllers\MovieSuggestController;
+use App\Controllers\RecipeController;
 use App\Models\Exceptions\ModelNotFoundException;
 use App\Services\Exceptions\InsufficientPrivilegesException;
 
@@ -82,7 +82,7 @@ try {
 
 		case "recipes":
 
-			$controller = new MerchController();
+			$controller = new RecipeController();
 			$controller->show();
 
 			break;

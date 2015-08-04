@@ -50,7 +50,7 @@ echo date('l, F j, Y H:i', $timePosted);
                   <p><?=$comment->comment?></p>
                 </div>
 
-              </article>
+                </article>
 <?php endforeach;?>
           <?php  else :?>
 <p>No comments. Yet…</p>
