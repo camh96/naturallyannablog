@@ -1,3 +1,12 @@
+<?php if (static ::$auth->user()->banned): ?>
+<div class="alert alert-danger" style="margin-top: 20px;">
+  <strong>WARNING!</strong>
+  <br />
+  YOU HAVE BEEN BANNED FROM POSTING AT NATURALLY ANNA. PLEASE CONTACT SUPPORT.
+  <br />
+  YOUR BAN ENDS IN 6 DAYS.
+</div>
+<?php endif ?>
 <div class="row">
         <div class="col-xs-12">
           <h1>DEV CMS TEST <small>Client slogan goes here</small></h1>

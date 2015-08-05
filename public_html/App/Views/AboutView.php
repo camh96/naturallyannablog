@@ -12,7 +12,7 @@ class AboutView extends View
     public function render()
     {
         $page = "about";
-        $page_title = "About The Festival";
+        $page_title = "About Me";
         include "templates/master.inc.php";
     }
 

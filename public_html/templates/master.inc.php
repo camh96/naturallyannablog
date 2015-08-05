@@ -24,19 +24,19 @@
             <div class="navbar-collapse collapse" id="navbar-main">
                <ul class="nav navbar-nav">
                   <li <?php if ($page === "index"):?> class="active" <?php endif;?> ><a href="./">Home</a></li>
-                  <li <?php if ($page === "about"):?> class="active" <?php endif;?> ><a href="./?page=about">About</a></li>
-                  <li <?php if ($page === "recipes"):?> class="active" <?php endif;?> ><a href="./?page=recipes">Recipes</a></li>
-                  <li <?php if ($page === "blog"):?> class="active" <?php endif;?> ><a href="./?page=blog">Blog</a></li>
-                  <li <?php if ($page === "contact"):?> class="active" <?php endif;?> ><a href="./?page=contact">Contact</a></li>
-                  <li <?php if ($page === "faqs"):?> class="active" <?php endif;?>><a href="./?page=faqs">FAQs</a></li>
+                  <li <?php if ($page === "about"):?> class="active" <?php endif;?> ><a href="./about">About</a></li>
+                  <li <?php if ($page === "recipes"):?> class="active" <?php endif;?> ><a href="./recipes">Recipes</a></li>
+                  <li <?php if ($page === "blog"):?> class="active" <?php endif;?> ><a href="./blog">Blog</a></li>
+                  <li <?php if ($page === "contact"):?> class="active" <?php endif;?> ><a href="./contact">Contact</a></li>
+                  <li <?php if ($page === "faqs"):?> class="active" <?php endif;?>><a href="./faqs">FAQs</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
 <?php if (!static ::$auth->check()):?>
-                  <li <?php if ($page === "auth.register"):?> class="active" <?php endif;?>><a href="./?page=register">Register</a></li>
-                  <li <?php if ($page === "auth.login"):?> class="active" <?php endif;?>><a href="./?page=login">Login</a></li>
+                  <li <?php if ($page === "auth.register"):?> class="active" <?php endif;?>><a href="./register">Register</a></li>
+                  <li <?php if ($page === "auth.login"):?> class="active" <?php endif;?>><a href="./login">Login</a></li>
 <?php  else :?>
                   <li><a href="#">Welcome back, <?=static ::$auth->user()->firstName;?>! </a></li>
-                  <li><a href="./?page=logout">Logout</a></li>
+                  <li><a href="./logout">Logout</a></li>
 <?php endif;?>
 </ul>
             </div>

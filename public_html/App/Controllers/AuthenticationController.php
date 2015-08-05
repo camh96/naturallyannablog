@@ -47,7 +47,7 @@ class AuthenticationController extends Controller
         if (static::$auth->attempt($_POST['email'], $_POST['password'])) {
             // login successful, check ban
             if (static::$auth->user()->banned) {
-            header("Location: ./?page=banned");
+            header("Location: ./");
             //user is banned, kill script and direct them to banned message
             exit();
             }
@@ -57,7 +57,7 @@ class AuthenticationController extends Controller
             exit();
         }}
         //user login incorrect
-        header("Location: ./?page=login&error=true");
+        header("Location: ./login&error=true");
         exit();
 
     }
@@ -66,7 +66,7 @@ class AuthenticationController extends Controller
     {
         static::$auth->logout();
 
-        header("Location: ./?page=login");
+        header("Location: ./login");
         exit();
     }
 

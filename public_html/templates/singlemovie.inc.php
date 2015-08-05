@@ -56,10 +56,20 @@ echo date('l, F j, Y H:i', $timePosted);
 <p>No comments. Yet…</p>
 <?php endif;?>
 
+
 <?php
 $errors = $newcomment->errors;
 ?>
-              <h3>Add Comment to '<?=$movie->title?>'</h3>
+<?php if(is_null(static ::$auth->user())): ?>
+  <pre>Yeah, it's null, we get it</pre>
+<?php elseif(static ::$auth->user()->banned): ?>
+<div class="alert alert-danger" style="margin-top: 20px;">
+  <strong>Sorry!</strong>
+  <br />
+  You have been banned from commenting.
+</div>
+<?php exit(); endif ?>
+              <h3>Add Comment to '<?=$movie->title?>'</h3>            
 <?php if (static ::$auth->check()):?>
             <form method="POST" action="./?page=comment.create" class="form-horizontal">
               <input type="hidden" name="movieID" value="<?=$movie->id?>">
@@ -80,6 +90,7 @@ $errors = $newcomment->errors;
                 </div>
               </div>
             </form>
+
 <?php  else :?>
 <p>You need to be <a href="./?page=login">logged in</a> to add a comment.</p>
 <?php endif;?>

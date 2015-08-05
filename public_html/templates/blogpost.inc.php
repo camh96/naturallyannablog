@@ -59,7 +59,7 @@ if ($movie->id) {
             <div class="form-group">
               <div class="col-sm-offset-4 col-sm-10 col-md-offset-2 col-md-10">
                  <button class="btn btn-success">
-                    <span class="glyphicon glyphicon-ok"></span> Add Movie
+                    <span class="glyphicon glyphicon-ok"></span> Add Post
                  </button>
               </div>
            </div>
@@ -70,7 +70,7 @@ if ($movie->id) {
                 <div class="col-sm-offset-4 col-sm-10 col-md-offset-2 col-md-10">
                   <input type="hidden" name="id" value="<?=$movie->id?>">
                   <button class="btn btn-danger">
-                    <span class="glyphicon glyphicon-trash"></span> Delete Movie
+                    <span class="glyphicon glyphicon-trash"></span> Delete Post
                   </button>
 
                 </div>

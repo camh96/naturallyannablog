@@ -81,7 +81,7 @@
 <?php if ($error):?>
 <div class="alert alert-danger alert-dismissible" role="alert">
                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-               <strong>Oh snap! </strong>Change a few things up and try again.
+               <strong>Oh snap! </strong>Your login details are incorrect. Please try again.
         </div>
 <?php endif;?>
 <form name="form" id="form" action="./?page=auth.attempt" class="form-horizontal" enctype="multipart/form-data" method="POST">
