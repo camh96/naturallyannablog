@@ -8,8 +8,10 @@ use App\Views\BlogPostView;
 use App\Views\MoviesView;
 use App\Views\SingleMovieView;
 
-class BlogController extends Controller {
-	public function index() {
+class BlogController extends Controller 
+{
+	public function index() 
+	{
 		$p        = isset($_GET['p'])?(int) $_GET['p']:1;
 		$pageSize = 10;
 		$movies   = Movie::all("title", true, $pageSize, $p);
@@ -89,6 +91,13 @@ class BlogController extends Controller {
 			header("Location: ./?page=post.edit&id=".$_POST['id']);
 			exit();
 		}
+
+
+		 if ($_FILES['poster']['error'] === UPLOAD_ERR_OK) {
+		            $movie->saveImg($_FILES['poster']['tmp_name']);
+		        } elseif (isset($_POST['remove-image']) && $_POST['remove-image'] === "TRUE") {
+		            $movie->poster = null;
+		        }
 
 		$movie->save();
 		$movie->saveTags();

@@ -36,15 +36,30 @@ if ($movie->id) {
            </div>
 
 
-           <div class="form-group <?php if ($errors['img']):?> has-error <?php endif;?>">
-             <label for="img" class="col-sm-2 control-label">Image</label>
-             <div class="col-sm-10">
-               <input id="img" class="form-control" name="img" rows="5"
-                 type="file"><?=$movie->img;?></textarea>
-               <div class="help-block"><?=$errors['img'];?></div>
-             </div>
-           </div>
+        <div class="form-group form-group-lg<?php if ($errors['poster']): ?> has-error <?php endif; ?>">
+              <label for="poster" class="col-sm-4 col-md-2 control-label">Image</label>
+              <div class="col-sm-5 col-md-7">
+                <input id="poster" class="form-control input-lg" name="poster"
+                  type="file">
+                <div class="help-block"><?= $errors['poster']; ?></div>
+              </div>
+              <?php if($movie->poster != ""): ?>
+                <div class="col-sm-1 col-md-1">
+                  <img src="./images/posters/100h/<?= $movie->poster ?>" alt="">
+                </div>
+                <div class="col-sm-2 col-md-2">
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="remove-image" value="TRUE"> Remove Image</label>
+                  </div>
+                </div>
+              <?php else: ?>
+                <div class="col-sm-3 col-md-3">
+                  <p><small>no poster found</small></p>
+                </div>
+              <?php endif; ?>
+            </div>
 
+          
             <div class="form-group form-group-lg<?php if ($errors['tags']):?> has-error <?php endif;?>">
               <label for="tags" class="col-sm-4 col-md-2 control-label">Tags</label>
               <div class="col-sm-8 col-md-10">
@@ -54,7 +69,8 @@ if ($movie->id) {
                 </script>
                 <div class="help-block"><?=$errors['tags'];?></div>
               </div>
-            </div>
+          
+          </div>
 
             <div class="form-group">
               <div class="col-sm-offset-4 col-sm-10 col-md-offset-2 col-md-10">
@@ -64,6 +80,7 @@ if ($movie->id) {
               </div>
            </div>
        </form>
+
 <?php if ($movie->id):?>
             <form method="POST" action="./?page=movie.destroy" class="form-horizontal">
               <div class="form-group">

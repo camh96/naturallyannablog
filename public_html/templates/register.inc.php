@@ -6,26 +6,30 @@ $errors = $user->errors;
           <form method="POST" action="./?page=auth.store" class="form-horizontal">
             <h1 style="text-align:center">Register New User</h1>
 
-              <div class="form-group form-group-lg<?php if ($errors['email']):?> has-error <?php endif;?>">
-              <label for="email" class="col-sm-4 col-md-2 control-label">First Name</label>
-              <div class="col-sm-4 col-md-5">
-                <input id="email" class="form-control input-lg" name="email"
+
+            <div class="form-inline">
+              <div class="form-group form-group-lg<?php if ($errors['firstName']):?> has-error <?php endif;?>">
+              <label for="firstName" class="col-sm-4 col-md-4 control-label">First Name</label>
+              <div class="col-sm-6 col-md-4">
+                <input id="firstName" class="form-control input-lg" name="firstName"
                   placeholder="John"
-                  value="<?=$user->email;?>">
+                  value="<?=$user->firstName;?>">
                 <div class="help-block"><?=$errors['firstName'];?></div>
               </div>
             </div>
             
             
-              <div class="form-group form-group-lg<?php if ($errors['email']):?> has-error <?php endif;?>">
-              <label for="email" class="col-sm-4 col-md-2 control-label">Last Name</label>
-              <div class="col-sm-4 col-md-5">
-                <input id="email" class="form-control input-lg" name="email"
+              <div class="form-group form-group-lg<?php if ($errors['lastName']):?> has-error <?php endif;?>">
+              <label for="lastName" class="col-sm-4 col-md-4 control-label">Last Name</label>
+              <div class="col-sm-6 col-md-4">
+                <input id="lastName" class="form-control input-lg" name="lastName"
                   placeholder="Doe"
-                  value="<?=$user->email;?>">
+                  value="<?=$user->lastName;?>">
                 <div class="help-block"><?=$errors['lastName'];?></div>
               </div>
             </div>
+        </div>
+
 
             <div class="form-group form-group-lg<?php if ($errors['email']):?> has-error <?php endif;?>">
               <label for="email" class="col-sm-4 col-md-2 control-label">Email Address</label>

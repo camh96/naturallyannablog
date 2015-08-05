@@ -10,7 +10,7 @@ class CommentsController extends Controller {
 		$input           = $_POST;
 		$input['userID'] = static ::$auth->user()->id;
 
-		$newcomment = new Comment($input);
+		$newcomment = new Comment(trim($input));
 
 		if (!$newcomment->isValid()) {
 			$_SESSION['comment.form'] = $newcomment;

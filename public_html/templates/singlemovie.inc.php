@@ -12,7 +12,11 @@
            <p>This was posted on <?php echo date('l, F j Y, H:i', strtotime($movie->created));?></p>
            <p style="padding:5px;"> <?echo $movie->message;
 ?></p>
-
+<?php if($movie->poster != ""): ?>
+          <a href="./?page=downloadoriginalposter&amp;filename=<?= $movie->poster ?>"><img src="./images/posters/300h/<?= $movie->poster ?>" alt=""></a>
+          <?php else: ?>
+            <p><small>no poster found</small></p>
+          <?php endif; ?>
 <?php if (static ::$auth->isAdmin()):?>
             <p>
             <a href="./?page=post.edit&amp;id=<?=$movie->id?>" class="btn btn-default">
@@ -61,16 +65,15 @@ echo date('l, F j, Y H:i', $timePosted);
 $errors = $newcomment->errors;
 ?>
 <?php if(is_null(static ::$auth->user())): ?>
-  <pre>Yeah, it's null, we get it</pre>
+  <p>You need to be <a href="./login">logged in</a> to add a comment.</p>
 <?php elseif(static ::$auth->user()->banned): ?>
 <div class="alert alert-danger" style="margin-top: 20px;">
   <strong>Sorry!</strong>
   <br />
   You have been banned from commenting.
-</div>
-<?php exit(); endif ?>
-              <h3>Add Comment to '<?=$movie->title?>'</h3>            
-<?php if (static ::$auth->check()):?>
+</div>                    
+<?php elseif (!static ::$auth->user()->banned):?>
+  <h3>Add Comment to '<?=$movie->title?>'</h3>
             <form method="POST" action="./?page=comment.create" class="form-horizontal">
               <input type="hidden" name="movieID" value="<?=$movie->id?>">
 
@@ -91,8 +94,6 @@ $errors = $newcomment->errors;
               </div>
             </form>
 
-<?php  else :?>
-<p>You need to be <a href="./?page=login">logged in</a> to add a comment.</p>
 <?php endif;?>
 
 

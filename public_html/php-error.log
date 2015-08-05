@@ -1,0 +1,12 @@
+[05-Aug-2015 19:01:03 Pacific/Auckland] PHP Fatal error:  Class 'Intervention\Image\ImageManagerStatic' not found in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/App/Models/Movie.php on line 197
+[05-Aug-2015 19:01:20 Pacific/Auckland] PHP Fatal error:  Class 'Intervention\Image\ImageManagerStatic' not found in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/App/Models/Movie.php on line 186
+[05-Aug-2015 19:02:08 Pacific/Auckland] PHP Fatal error:  Class 'Intervention\Image\ImageManagerStatic' not found in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/App/Models/Movie.php on line 186
+[05-Aug-2015 19:03:46 Pacific/Auckland] PHP Fatal error:  Class 'Intervention\Image\ImageManagerStatic' not found in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/App/Models/Movie.php on line 186
+[05-Aug-2015 19:03:56 Pacific/Auckland] PHP Fatal error:  Class 'Intervention\Image\ImageManagerStatic' not found in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/App/Models/Movie.php on line 186
+[05-Aug-2015 19:06:40 Pacific/Auckland] PHP Fatal error:  Class 'Intervention\Image\ImageManagerStatic' not found in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/App/Models/Movie.php on line 186
+[06-Aug-2015 08:54:02 Pacific/Auckland] PHP Notice:  Undefined index: img in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/templates/blogpost.inc.php on line 39
+[06-Aug-2015 08:54:02 Pacific/Auckland] PHP Notice:  Undefined index: img in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/templates/blogpost.inc.php on line 44
+[06-Aug-2015 08:55:31 Pacific/Auckland] PHP Notice:  Undefined index: img in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/App/Controllers/BlogController.php on line 96
+[06-Aug-2015 11:29:50 Pacific/Auckland] PHP Parse error:  syntax error, unexpected 'elseif' (T_ELSEIF) in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/templates/singlemovie.inc.php on line 77
+[06-Aug-2015 11:30:17 Pacific/Auckland] PHP Parse error:  syntax error, unexpected '!', expecting '(' in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/templates/singlemovie.inc.php on line 77
+[06-Aug-2015 11:30:22 Pacific/Auckland] PHP Parse error:  syntax error, unexpected '!', expecting '(' in /Applications/XAMPP/xamppfiles/htdocs/xampp/annablog/public_html/templates/singlemovie.inc.php on line 77

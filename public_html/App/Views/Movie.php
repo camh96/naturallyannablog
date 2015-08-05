@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\finfo
+
 class Movie
 {
 

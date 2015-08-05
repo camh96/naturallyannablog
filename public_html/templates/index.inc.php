@@ -1,4 +1,6 @@
-<?php if (static ::$auth->user()->banned): ?>
+<?php if(is_null(static ::$auth->user())): ?>
+
+<?php elseif(static ::$auth->user()->banned): ?>
 <div class="alert alert-danger" style="margin-top: 20px;">
   <strong>WARNING!</strong>
   <br />

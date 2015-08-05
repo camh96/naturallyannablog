@@ -57,7 +57,7 @@ class AuthenticationController extends Controller
             exit();
         }}
         //user login incorrect
-        header("Location: ./login&error=true");
+        header("Location: ./?page=login&error=true");
         exit();
 
     }

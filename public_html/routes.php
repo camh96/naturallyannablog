@@ -159,6 +159,15 @@ try {
 
 			break;
 
+
+		case "downloadoriginalposter":
+            $file = "./images/posters/originals/" . $_GET['filename'];
+            header('Content-Type: application/octet-stream');
+            header('Content-Transfer-Encoding: Binary');
+            header('Content-disposition: attachment; filename="' . basename($file) . '"');
+            readfile($file);
+            break;	
+
 			// case "users":
 
 			// 	$controller = new UsersController();
