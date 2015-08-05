@@ -45,12 +45,21 @@ class AuthenticationController extends Controller
     public function attempt()
     {
         if (static::$auth->attempt($_POST['email'], $_POST['password'])) {
-            // login successful
+            // login successful, check ban
+            if (static::$auth->user()->banned) {
+            header("Location: ./?page=banned");
+            //user is banned, kill script and direct them to banned message
+            exit();
+            }
+            // not banned, go to homepage
+            else {
             header("Location: ./");
             exit();
-        }
+        }}
+        //user login incorrect
         header("Location: ./?page=login&error=true");
         exit();
+
     }
 
     public function logout()

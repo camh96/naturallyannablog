@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Comment;
 use App\Models\Movie;
-use App\Views\MovieFormView;
+use App\Views\BlogPostView;
 use App\Views\MoviesView;
 use App\Views\SingleMovieView;
 
@@ -38,7 +38,7 @@ class BlogController extends Controller {
 
 		$movie = $this->getMovieFormData();
 
-		$view = new MovieFormView(compact('movie'));
+		$view = new BlogPostView(compact('movie'));
 		$view->render();
 	}
 
@@ -68,7 +68,7 @@ class BlogController extends Controller {
 		$movie = $this->getMovieFormData($_GET['id']);
 		$movie->loadTags();
 
-		$view = new MovieFormView(compact('movie', 'tags'));
+		$view = new BlogPostView(compact('movie', 'tags'));
 		$view->render();
 	}
 
@@ -86,14 +86,14 @@ class BlogController extends Controller {
 		if (!$movie->isValid()) {
 			$_SESSION['movie.form'] = $movie;
 
-			header("Location: ./?page=movie.edit&id=".$_POST['id']);
+			header("Location: ./?page=post.edit&id=".$_POST['id']);
 			exit();
 		}
 
 		$movie->save();
 		$movie->saveTags();
 
-		header("Location: ./?page=movie&id=".$movie->id);
+		header("Location: ./?page=blog.post&id=".$movie->id);
 
 	}
 

@@ -1,12 +1,12 @@
 <div class="row">
         <div class="col-xs-12">
-          <h1>Naturally Anna <small>The story of the road to recovery</small></h1>
+          <h1>DEV CMS TEST <small>Client slogan goes here</small></h1>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-6">
-          <p class="lead">Welcome to my blog. It is still under construction, and probably heavily broken in some areas, but feel free to have a look around.</p>
+          <p class="lead">Some sub message here, like "Welcome to my blog. It is still under construction, and probably heavily broken in some areas, but feel free to have a look around."</p>
 
 
                  </div>

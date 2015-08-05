@@ -106,6 +106,16 @@ class AuthenticationService
         return static::$currentUser->role === 'admin';
     }
 
+
+	public function isBanned($ban)
+	{
+		if ($this->isAdmin()) {
+			return false;
+		}
+
+		return static::$currentUser->banned === $ban;
+	}
+
     public function mustBeAdmin()
     {
         if (! $this->isAdmin()) {

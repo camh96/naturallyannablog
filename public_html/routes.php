@@ -7,7 +7,9 @@ use App\Controllers\RecipeController;
 use App\Controllers\CommentsController;
 use App\Controllers\ErrorController;
 use App\Controllers\FAQsController;
+use App\Controllers\BannedController;
 use App\Controllers\HomeController;
+use App\Controllers\ContactController;
 use App\Controllers\MovieSuggestController;
 use App\Models\Exceptions\ModelNotFoundException;
 use App\Services\Exceptions\InsufficientPrivilegesException;
@@ -44,6 +46,13 @@ try {
 			$controller->attempt();
 
 			break;
+
+		case "banned":
+
+		$controller = new BannedController();
+		$controller->show();
+
+		break;	
 
 		case "register":
 
@@ -122,7 +131,7 @@ try {
 
 			break;
 
-		case "movie.update":
+		case "post.update":
 
 			$controller = new BlogController();
 			$controller->update();

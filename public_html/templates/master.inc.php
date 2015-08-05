@@ -35,7 +35,7 @@
                   <li <?php if ($page === "auth.register"):?> class="active" <?php endif;?>><a href="./?page=register">Register</a></li>
                   <li <?php if ($page === "auth.login"):?> class="active" <?php endif;?>><a href="./?page=login">Login</a></li>
 <?php  else :?>
-                  <li><a href="#">Welcome back, <?=static ::$auth->user()->firstName;?>!</a></li>
+                  <li><a href="#">Welcome back, <?=static ::$auth->user()->firstName;?>! </a></li>
                   <li><a href="./?page=logout">Logout</a></li>
 <?php endif;?>
 </ul>
@@ -44,7 +44,7 @@
       </div>
       <div class="container">
 
-<?php $this->content();?>
+<?php $this->content(); ?>
       <footer class="footer">
       <div class="container" id="wrap">
         <p class="text-muted">© <?php echo date("Y")?> Naturally Anna.</p>
