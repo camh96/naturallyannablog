@@ -53,9 +53,6 @@ class Movie extends DatabaseModel {
 		$this->tags = implode($taglist, ", ");
 	}
 
-
-echo $_GET['id'];
-
 	public function saveTags() {
 		// take the string from the tags property
 		// explode it into an array

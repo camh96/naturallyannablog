@@ -10,9 +10,9 @@
                 <h1>
                     No way José!</h1>
                 <h1>
-                    401 Unauthorized</h1>
+                    403 Forbidden</h1>
                 <div class="error-details">
-                    Sorry, we don't know who you are. Please log in.
+                    Sorry, we can't let you do that.
                 </div>
                 <div class="error-actions">
                     <a href="./" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>

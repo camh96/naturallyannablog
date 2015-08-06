@@ -1,11 +1,7 @@
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
-            <h1 class="page-header">Naturally Anna Blog</h1>
-            <!-- Blog Posts as foreach loop -->
-
+<div class="row">
+       <div class="col-xs-12">
+<h1>DEVELOPMENT MODE - UNDER CONSTRUCTION</h1>
+         <h1>Blog - Posts</h1>
 <?php if (static ::$auth->isAdmin()):?>
 <p>
             <a href="./?page=post.create" class="btn btn-default">
@@ -13,48 +9,14 @@
             </a>
           </p>
 <?php endif?>
+<ol>
+<?php foreach ($movies as $movie):?>
+                <h2><li><a href="./?page=blog.post&amp;id=<?=$movie->id?>">
+<?=$movie->title;
+?>
+</a></li></h2>
+<?php endforeach;?>
 
-            <?php foreach ($movies as $movie):?>
-            <h2>
-                <a href="./?page=blog.post&amp;id=<?=$movie->id?>"><?=$movie->title;?></a>
-            </h2>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on <?php $timePosted = strtotime($movie->created);
-                echo date('l, F j, Y H:i', $timePosted)?> </p>
-            <hr>
-            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-            <hr>
-            <p><?= $movie->message ?></p>
-            <a class="btn btn-primary" href="./?page=blog.post&amp;id=<?=$movie->id?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-            <hr>
-            <?php endforeach ?>
-            <?php $this->paginate("./?page=blog", $p, $recordCount, $pageSize, 5);?>
-        </div>
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-            <!-- Blog Search Well -->
-            <div class="well">
-                <h4>Blog Search</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                    <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                    </span>
-                </div>
-                <!-- /.input-group -->
-            </div>
-            <!-- Blog Categories Well -->
-        </div>
-    </div>
-    <!-- /.row -->
-    <hr>
-    <!-- Footer -->
-</div>
-<!-- /.container -->
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php $this->paginate("./?page=blog", $p, $recordCount, $pageSize);?>
+</ol>
+

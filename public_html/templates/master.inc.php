@@ -45,11 +45,7 @@
       <div class="container">
 
 <?php $this->content(); ?>
-      <footer class="footer">
-      <div class="container" id="wrap">
-        <p class="text-muted">© <?php echo date("Y")?> Naturally Anna.</p>
-      </div>
-    </footer>
+  
       </div>
 
 

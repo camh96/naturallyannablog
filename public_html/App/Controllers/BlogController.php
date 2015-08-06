@@ -13,7 +13,7 @@ class BlogController extends Controller
 	public function index() 
 	{
 		$p        = isset($_GET['p'])?(int) $_GET['p']:1;
-		$pageSize = 10;
+		$pageSize = 5;
 		$movies   = Movie::all("created", false, $pageSize, $p);
 
 		$recordCount = Movie::count();

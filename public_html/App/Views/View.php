@@ -88,7 +88,7 @@ abstract class View
 
             <?php // next ?>
             <?php if ($p < $totalPages): ?>
-              <li><a href="./?page=movies&amp;p=<?= $nextPage ?>" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+              <li><a href="<?= $url ?>&amp;p=<?= $nextPage ?>" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
             <?php else: ?>
               <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
             <?php endif; ?>
