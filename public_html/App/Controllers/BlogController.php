@@ -14,7 +14,7 @@ class BlogController extends Controller
 	{
 		$p        = isset($_GET['p'])?(int) $_GET['p']:1;
 		$pageSize = 10;
-		$movies   = Movie::all("title", true, $pageSize, $p);
+		$movies   = Movie::all("created", false, $pageSize, $p);
 
 		$recordCount = Movie::count();
 

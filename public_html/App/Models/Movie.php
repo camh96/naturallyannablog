@@ -10,7 +10,7 @@ class Movie extends DatabaseModel {
 
 	protected static $columns = ['id', 'title', 'message', 'poster', 'created'];
 
-	protected static $tableName = "movies";
+	protected static $tableName = "posts";
 
 	protected static $validationRules = [
 		'title'   => 'minlength:1',
