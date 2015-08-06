@@ -19,5 +19,4 @@ class SinglePostView extends View
         include "templates/singlepost.inc.php";
     }
 
-
 }

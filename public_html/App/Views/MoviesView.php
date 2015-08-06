@@ -12,7 +12,7 @@ class MoviesView extends View {
 
 	protected function content() {
 		extract($this->data);
-		include "templates/blog.inc.php";
+		include "templates/bloghome.inc.php";
 	}
 
 }

@@ -1,38 +1,69 @@
-<div class="row">
-       <div class="col-xs-12">
-         <ol class="breadcrumb">
-         <li><a href="./">Home</a></li>
-         <li><a href="./?page=blog">Posts</a></li>
-         <li class="active"><?=$movie->title?></li>
-       </ol>
-         <h1 style="text-align:center">Post</h1>
+<!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1><?=$movie->title?></h1>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo date('l, F j Y, H:i', strtotime($movie->created));?></p></p>
+
+                <hr>
+
+                <!-- Preview Image -->
+                <!-- <img class="img-responsive" src="http://placehold.it/900x300" alt=""> -->
 
 
-           <h2> <?=$movie->title;?></h2>
-           <p>This was posted on <?php echo date('l, F j Y, H:i', strtotime($movie->created));?></p>
-           <p style="padding:5px;"> <?echo $movie->message;
-?></p>
-<?php if($movie->poster != ""): ?>
-          <a href="./?page=downloadoriginalposter&amp;filename=<?= $movie->poster ?>"><img src="./images/posters/300h/<?= $movie->poster ?>" alt=""></a>
-          <?php else: ?>
-            <p><small>no poster found</small></p>
-          <?php endif; ?>
-<?php if (static ::$auth->isAdmin()):?>
-            <p>
-            <a href="./?page=post.edit&amp;id=<?=$movie->id?>" class="btn btn-default">
-              <span class="glyphicon glyphicon-pencil"></span> Edit Post
-            </a>
-          </p>
-<?php endif?>
-<ul class="list-inline">
-<?php foreach ($tags as $tag):?><!--
-            --><li><span class="label label-primary"><?=ucfirst($tag->tag)?></span></li><!--
-          --><?php endforeach;?>
-</ul>
+              <?php if($movie->poster != ""): ?>
+              <a href="./?page=downloadoriginalposter&amp;filename=<?= $movie->poster ?>"><img src="./images/posters/300h/<?= $movie->poster ?>" alt=""></a>
+              <?php else: ?>
+              <p><small>No image found.</small></p>
+              <?php endif; ?>
+              <?php if (static ::$auth->isAdmin()):?>
+              <p>
+                 <a href="./?page=post.edit&amp;id=<?=$movie->id?>" class="btn btn-default">
+                 <span class="glyphicon glyphicon-pencil"></span> Edit Post
+                 </a>
+              </p>
+              <?php endif?>
+              <ul class="list-inline">
+              <?php foreach ($tags as $tag):?><!--
+                 -->
+              <li><span class="label label-primary"><?=ucfirst($tag->tag)?></span></li>
+              <!--
+                 --><?php endforeach;?>
 
 
 
-<?php if (count($comments) > 0):?>
+
+
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead">SUBTITLE GOES HERE </p>
+                <p> <?php echo $movie->message;?></p>
+                <hr>
+
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                
+                <!-- Comment -->
+                <div class="media">
+                   
+                  <?php if (count($comments) > 0):?>
             <?php $count = 0;?>
 <h2 style="text-align:center; clear:both;">Comments</h2>
 <?php foreach ($comments as $comment):?>
@@ -60,51 +91,9 @@ echo date('l, F j, Y H:i', $timePosted);
 <p>No comments. Yet…</p>
 <?php endif;?>
 
-
 <?php
 $errors = $newcomment->errors;
 ?>
-<?php if(empty($movie)): ?>
-<div class="alert alert-danger" style="margin-top: 20px;">
-  <strong>ERROR!</strong>
-  <br />
-  WHOA.
-</div>
-<?php endif ?>
-
-
-
-
-
-
-
-
-
-<pre>
-<?php 
-if (!static ::$auth->user()->id) 
-{
-  echo "NOT LOGGED IN";
-}
-else
-{
-  echo "logged in";
-}
-
-
-?>
-</pre>
-<pre>
-<?php print_r($newcomment);
-      
- ?>
-</pre>
-
-
-
-
-
-
 <?php if(is_null(static ::$auth->user())): ?>
   <p>You need to be <a href="./login">logged in</a> to add a comment.</p>
 <?php elseif(static ::$auth->user()->banned): ?>
@@ -112,8 +101,7 @@ else
   <strong>Sorry!</strong>
   <br />
   You have been banned from commenting.
-</div>
-
+</div>                    
 <?php elseif (!static ::$auth->user()->banned):?>
   <h3>Add Comment to '<?=$movie->title?>'</h3>
             <form method="POST" action="./?page=comment.create" class="form-horizontal">
@@ -140,8 +128,34 @@ else
 
 
 
+                </div>
 
+            </div>
 
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
 
-       </div>
-     </div>
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                
+                </div>
+
+               
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>

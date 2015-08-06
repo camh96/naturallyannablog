@@ -1,6 +1,5 @@
 <!-- Page Content -->
 <div class="container">
-<h1>asdasdasda</h1>
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">

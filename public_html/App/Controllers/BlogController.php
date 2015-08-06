@@ -6,7 +6,7 @@ use App\Models\Comment;
 use App\Models\Movie;
 use App\Views\BlogPostView;
 use App\Views\MoviesView;
-use App\Views\SingleMovieView;
+use App\Views\SinglePostView;
 
 class BlogController extends Controller 
 {
@@ -29,7 +29,7 @@ class BlogController extends Controller
 		$comments = $movie->comments();
 		$tags     = $movie->getTags();
 
-		$view = new SingleMovieView(
+		$view = new SinglePostView(
 			compact('movie', 'comments', 'newcomment', 'tags')
 		);
 		$view->render();
@@ -133,4 +133,11 @@ class BlogController extends Controller
 		}
 		return $comment;
 	}
+
+	// public function checkEmpty() {
+	// 	if(empty($_GET['id'])){
+	// 		die("not set!!");
+	// 	}
+		
+	//}
 }

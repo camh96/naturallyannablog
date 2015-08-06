@@ -53,6 +53,9 @@ class Movie extends DatabaseModel {
 		$this->tags = implode($taglist, ", ");
 	}
 
+
+echo $_GET['id'];
+
 	public function saveTags() {
 		// take the string from the tags property
 		// explode it into an array
@@ -177,7 +180,7 @@ class Movie extends DatabaseModel {
 
         move_uploaded_file($filename, $destination);
 
-        $this->img = $newFilename;
+        $this->poster = $newFilename;
 
         //240x300 80x100
         if (! is_dir("./images/posters/300h")) {
