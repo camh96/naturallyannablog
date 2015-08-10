@@ -18,7 +18,7 @@ class Movie extends DatabaseModel {
 	];
 
 	public function comments() {
-		return Comment::allBy('movieID', $this->id);
+		return Comment::allBy('postID', $this->id);
 	}
 
 	public function getTags() {
@@ -27,8 +27,8 @@ class Movie extends DatabaseModel {
 		$db = static ::getDatabaseConnection();
 
 		$query = "SELECT id, tag FROM tags ";
-		$query .= " JOIN movies_tags ON id = tag_id ";
-		$query .= " WHERE movie_id = :id";
+		$query .= " JOIN posts_tags ON id = tag_id ";
+		$query .= " WHERE post_id = :id";
 
 		$statement = $db->prepare($query);
 		$statement->bindValue(":id", $this->id);
@@ -122,26 +122,26 @@ class Movie extends DatabaseModel {
 	private function deleteAllTagsFromMovie($db) {
 		// delete all existing relationships between this movie and all tags
 
-		$query     = "DELETE FROM movies_tags WHERE movie_id = :movie_id";
+		$query     = "DELETE FROM posts_tags WHERE post_id = :post_id";
 		$statement = $db->prepare($query);
-		$statement->bindValue(':movie_id', $this->id);
+		$statement->bindValue(':post_id', $this->id);
 		$statement->execute();
 	}
 
 	private function insertTagsForMovie($db, $tagIds) {
 		// insert all relationships
 
-		$query = "INSERT IGNORE INTO movies_tags (movie_id, tag_id) VALUES ";
+		$query = "INSERT IGNORE INTO posts_tags (post_id, tag_id) VALUES ";
 
 		$tagvalues = [];
 		for ($i = 0; $i < count($tagIds); $i += 1) {
-			array_push($tagvalues, "(:movie_id_{$i}, :tag_id_{$i})");
+			array_push($tagvalues, "(:post_id_{$i}, :tag_id_{$i})");
 		}
 		$query .= implode(",", $tagvalues);
 
 		$statement = $db->prepare($query);
 		for ($i = 0; $i < count($tagIds); $i += 1) {
-			$statement->bindValue(":movie_id_{$i}", $this->id);
+			$statement->bindValue(":post_id_{$i}", $this->id);
 			$statement->bindValue(":tag_id_{$i}", $tagIds[$i]);
 		}
 

@@ -7,6 +7,7 @@ use App\Controllers\RecipeController;
 use App\Controllers\CommentsController;
 use App\Controllers\ErrorController;
 use App\Controllers\FAQsController;
+use App\Controllers\SearchController;
 use App\Controllers\BannedController;
 use App\Controllers\HomeController;
 use App\Controllers\ContactController;
@@ -160,6 +161,13 @@ try {
 			break;
 
 
+		case "search":
+            
+            $controller = new SearchController();
+            $controller->search();
+         
+            break;
+
 		case "downloadoriginalposter":
             $file = "./images/posters/originals/" . $_GET['filename'];
             header('Content-Type: application/octet-stream');
@@ -168,19 +176,6 @@ try {
             readfile($file);
             break;	
 
-			// case "users":
-
-			// 	$controller = new UsersController();
-			// 	$controller->index();
-
-			// 	break;
-
-			// case "user":
-
-			// 	$controller = new UsersController();
-			// 	$controller->show();
-
-			// 	break;
 
 		default:
 

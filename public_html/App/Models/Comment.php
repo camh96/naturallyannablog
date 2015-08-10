@@ -5,12 +5,12 @@ namespace App\Models;
 class Comment extends DatabaseModel
 {
 
-    protected static $columns = ['id', 'userID', 'movieID', 'created', 'comment'];
+    protected static $columns = ['id', 'userID', 'postID', 'created', 'comment'];
 
     protected static $tableName = "comments";
 
     protected static $validationRules = [
-        'movieID'    => 'numeric,exists:\App\Models\Movie',
+        'postID'    => 'numeric,exists:\App\Models\Movie',
         'userID'     => 'numeric,exists:\App\Models\User',
         'comment'     => 'minlength:10,maxlength:16000',
     ];
@@ -22,6 +22,6 @@ class Comment extends DatabaseModel
 
     public function movie()
     {
-        return new Movie($this->movieID);
+        return new Movie($this->postID);
     }   
 }

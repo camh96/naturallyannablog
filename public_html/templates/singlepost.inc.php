@@ -44,7 +44,7 @@ throw new ModelNotFoundException();
                 --><?php endforeach;?>
             <hr>
             <!-- Post Content -->
-            <p class="lead">SUBTITLE GOES HERE </p>
+            
             <p> <?php echo $movie->message;?></p>
             <hr>
             <div class="media">
@@ -62,7 +62,20 @@ throw new ModelNotFoundException();
                         <img src="<?=$comment->user()->gravatar(48)?>" alt="">
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading"><?=$count?>) <a href="#"><?=ucwords($comment->user()->username)?></a></h4>
+                        <h4 class="media-heading"><?=$count?>) <a href="#">
+          
+                        <?php
+
+                          foreach ($comment->user() as $key ) {
+                            
+                            print_r($key['firstName']);
+                            echo " ";
+                            print_r($key['lastName']);
+                          }
+
+                         ?> 
+
+                         </a></h4>
                         <p><small>Comment submitted: <?php $timePosted = strtotime($comment->created);
                             echo date('l, F j, Y H:i', $timePosted);
                             ?></small></p>
@@ -84,7 +97,7 @@ throw new ModelNotFoundException();
                 <?php elseif (!static ::$auth->user()->banned):?>
                 <h3>Add Comment to '<?=$movie->title?>'</h3>
                 <form method="POST" action="./?page=comment.create" class="form-horizontal">
-                    <input type="hidden" name="movieID" value="<?=$movie->id?>">
+                    <input type="hidden" name="postID" value="<?=$movie->id?>">
                     <div class="form-group <?php if ($errors['comment']):?> has-error <?php endif;?>">
                         <label for="comment" class="col-sm-4 col-md-2 control-label">Comment</label>
                         <div class="col-sm-8 col-md-10">

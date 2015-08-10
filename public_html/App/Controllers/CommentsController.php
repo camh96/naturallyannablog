@@ -14,11 +14,11 @@ class CommentsController extends Controller {
 
 		if (!$newcomment->isValid()) {
 			$_SESSION['comment.form'] = $newcomment;
-			header("Location: ./?page=blog.post&id=".$newcomment->movieID."#comment");
+			header("Location: ./?page=blog.post&id=".$newcomment->postID."#comment");
 			exit();
 		}
 
 		$newcomment->save();
-		header("Location: ./?page=blog.post&id=".$newcomment->movieID."#comment-".$newcomment->id);
+		header("Location: ./?page=blog.post&id=".$newcomment->postID."#comment-".$newcomment->id);
 	}
 }
