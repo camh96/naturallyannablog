@@ -6,6 +6,8 @@
             <h1 class="page-header">Naturally Anna Blog</h1>
             <!-- Blog Posts as foreach loop -->
 
+            
+
 <?php if (static ::$auth->isAdmin()):?>
 <p>
             <a href="./?page=post.create" class="btn btn-default">

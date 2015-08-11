@@ -195,5 +195,9 @@ class Movie extends DatabaseModel {
         $img->save("./images/posters/100h/" . $newFilename);
     }
 
+    public function search()
+    {
+    	echo $_GET['q'];
+    }
 
 }

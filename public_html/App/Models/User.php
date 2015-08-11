@@ -4,7 +4,7 @@ namespace App\Models;
 
 class User extends DatabaseModel {
 
-	protected static $columns = ['id', 'firstName', 'lastName', 'email', 'password', 'role', 'banned'];
+	protected static $columns = ['id', 'firstName', 'lastName', 'email', 'password', 'role', 'banned', 'created'];
 
 	protected static $tableName = "users";
 

@@ -34,7 +34,9 @@
 <?php if (!static ::$auth->check()):?>
                   <li <?php if ($page === "auth.register"):?> class="active" <?php endif;?>><a href="./register">Register</a></li>
                   <li <?php if ($page === "auth.login"):?> class="active" <?php endif;?>><a href="./login">Login</a></li>
+     
 <?php  else :?>
+                  <li <?php if ($page === "admin"):?> class="active" <?php endif; ?> ><a href="./admin">Admin Panel</a></li>
                   <li><a href="#">Welcome back, <?=static ::$auth->user()->firstName;?>! </a></li>
                   <li><a href="./logout">Logout</a></li>
 <?php endif;?>

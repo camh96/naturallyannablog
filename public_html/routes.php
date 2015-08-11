@@ -8,6 +8,7 @@ use App\Controllers\CommentsController;
 use App\Controllers\ErrorController;
 use App\Controllers\FAQsController;
 use App\Controllers\SearchController;
+use App\Controllers\AdminController;
 use App\Controllers\BannedController;
 use App\Controllers\HomeController;
 use App\Controllers\ContactController;
@@ -165,6 +166,13 @@ try {
             
             $controller = new SearchController();
             $controller->search();
+         
+            break;
+
+        case "admin":
+            
+            $controller = new AdminController();
+            $controller->show();
          
             break;
 
