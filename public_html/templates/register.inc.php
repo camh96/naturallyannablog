@@ -7,7 +7,8 @@ $errors = $user->errors;
             <h1 style="text-align:center">Register New User</h1>
 
 
-            <div class="form-inline">
+      
+      <div class="form-inline">
               <div class="form-group form-group-lg<?php if ($errors['firstName']):?> has-error <?php endif;?>">
               <label for="firstName" class="col-sm-4 col-md-4 control-label">First Name</label>
               <div class="col-sm-6 col-md-4">
@@ -29,6 +30,7 @@ $errors = $user->errors;
               </div>
             </div>
         </div>
+
 
 
             <div class="form-group form-group-lg<?php if ($errors['email']):?> has-error <?php endif;?>">
@@ -73,3 +75,5 @@ $errors = $user->errors;
 
         </div>
       </div>
+
+

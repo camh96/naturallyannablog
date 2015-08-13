@@ -62,7 +62,7 @@ throw new ModelNotFoundException();
                         <img src="<?=$comment->user()->gravatar(48)?>" alt="">
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading"><?=$count?>) <a href="#">
+                        <h4 class="media-heading"><?=$count?>) <a href="./?page=user.profile&id=<?=$comment->user()->id?>">
           
                         <?php
 

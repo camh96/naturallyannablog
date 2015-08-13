@@ -8,6 +8,7 @@ use App\Controllers\CommentsController;
 use App\Controllers\ErrorController;
 use App\Controllers\FAQsController;
 use App\Controllers\SearchController;
+use App\Controllers\UserController;
 use App\Controllers\AdminController;
 use App\Controllers\BannedController;
 use App\Controllers\HomeController;
@@ -105,7 +106,7 @@ try {
 
 			break;
 
-		case "blog.post": //old "movie"
+		case "blog.post": 
 
 			$controller = new BlogController();
 			$controller->show();
@@ -154,13 +155,6 @@ try {
 
 			break;
 
-		case "moviesuggest":
-
-			$controller = new MovieSuggestController();
-			$controller->show();
-
-			break;
-
 
 		case "search":
             
@@ -170,6 +164,13 @@ try {
             break;
 
         case "admin":
+            
+            $controller = new AdminController();
+            $controller->index();
+         
+            break;
+
+        case "user.profile":
             
             $controller = new AdminController();
             $controller->show();

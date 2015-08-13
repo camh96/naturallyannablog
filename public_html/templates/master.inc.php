@@ -31,15 +31,26 @@
                   <li <?php if ($page === "faqs"):?> class="active" <?php endif;?>><a href="./faqs">FAQs</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
+
+<?php if (static ::$auth->check()):?>
+<?php if (static ::$auth->user()->role == "admin"):?>
+
+
+<li <?php if ($page === "admin"):?> class="active" <?php endif;?>><a href="./admin">Admin Panel</a></li>
+
+<?php endif ?>
+   <?php endif ?>
+               
 <?php if (!static ::$auth->check()):?>
                   <li <?php if ($page === "auth.register"):?> class="active" <?php endif;?>><a href="./register">Register</a></li>
                   <li <?php if ($page === "auth.login"):?> class="active" <?php endif;?>><a href="./login">Login</a></li>
      
 <?php  else :?>
-                  <li <?php if ($page === "admin"):?> class="active" <?php endif; ?> ><a href="./admin">Admin Panel</a></li>
-                  <li><a href="#">Welcome back, <?=static ::$auth->user()->firstName;?>! </a></li>
+
+                  <li><a href="./?page=user.profile&id=<?=static ::$auth->user()->id ?>">Welcome back, <?=static ::$auth->user()->firstName;?>! </a></li>
                   <li><a href="./logout">Logout</a></li>
 <?php endif;?>
+
 </ul>
             </div>
          </div>
